@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var a = 10;
+        // var a = '10';
+        // console.log(a); // '10'
+
+        // if(true) {
+        //     var a = true;
+        // }
+        // console.log(a);
+
+        let a = 10;
+        //let a = '10'; //중복x
+        if(true) {
+            let a = true;
+            console.log(a); //true
+        }
+        console.log(a); // 10
+
+        console.log('--------------------');
+        const gender = '남자';
+        // gender = '여자'; //변경불가
+
+        const arr = [1,2,3];
+        //arr = '홍길동' //변경불가
+        arr[0] = '홍길동'; //내부요소 변경은 가능함
+        arr[1] = '이순신';
+        arr.push('charlie');
+        console.log(arr);
+        const person = {name: 'charlie'};
+        person.name = 'lola'; //내부요소 변경은 가능함
+        person.age = 20;
+        console.log(person);
+
+    </script>
+</body>
+</html>

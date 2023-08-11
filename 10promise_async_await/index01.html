@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    //1. promise객체란? => es5내장객체
+   let promise = new Promise(function(success, fail) {
+
+      setTimeout(() => {
+        success('성공했어');
+
+        //프로미스 입장에서 
+        fail(new Error('이거 에러야'))
+      }, 5000)
+
+    })
+
+    console.log(promise);
+    promise.then(data => {
+      console.log(data);
+    });
+
+    //then절은 성공을 돌받는 콜백함를 정의함
+    //catch절은 에러를 돌려받을 콜백할수를 정의함
+    promise
+    .then((data) => {
+      console.log(data);
+    }).catch((err) => {
+      console.log(err);
+    })
+
+
+
+    // function success() {
+    //   console.log(a);
+    // }
+
+    // function fail() {
+
+    // }
+  </script>
+</body>
+</html>

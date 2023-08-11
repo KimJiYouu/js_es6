@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    //이런 형태로 사용하게 되면 비동기적 실행이 10초가 걸린다.
+
+    // function myFetch(url) {
+    //   //10초 동안 비동기적 실행...
+    //   return "결과 반환~";
+    // }
+    // const result = myFetch('');
+    // console.log(result);
+
+    //2nd
+    // function myFetch(url) {
+    //   return new Promise(function (success, fail ) {
+    //     success('결과반환~')
+    //   });
+    // }
+
+      //1. async를 붙이면 자동으로 리턴이 promise로 반환됨
+    async function myFetch(url) {
+      return '결과반환'
+    }
+
+    // console.log(1);
+    // myFetch("~~~").then(function(result) {
+    //   console.log(result);
+    //   console.log(2);
+    // })
+    // console.log(3);
+
+    //2. async안에서 await키워드를 사용할 수 있음
+    //3. return 이 promisse라면 await을 붇이고 then 절 생략할 수 있음
+    (async () => {
+      const result = await myFetch("~");
+      console.log(result);
+
+    })();
+
+  </script>
+</body>
+</html>

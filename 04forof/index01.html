@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = ['a', 'b', 'c'];
+        //es5
+        for(var i in arr) {
+            console.log(i);
+        }
+        //es6 - 자바의 향상된 for문 형태(요소 삭제x)
+        for(let i of arr) {
+            console.log(i);
+        }
+
+        //error = 객체는 반복 x
+        // let person = {name: 'charlie', age: 20};
+        // for(let i of person) {
+        //     console.log(i);
+        // }
+
+        //
+        const list = [{name: 'charlie', age:10}, 
+                      {name: 'lola', age: 20}
+                     ];
+
+        //of와 구조분해할당하기       
+        for(let {name, age} of list) {
+            console.log(name);
+            console.log(age);
+        }
+    </script>
+</body>
+</html>
